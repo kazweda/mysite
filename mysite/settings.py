@@ -5,15 +5,22 @@ import environ
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-env = environ.Env(
-    DEBUG=(bool, False)
-)
-env.read_env(os.path.join(BASE_DIR, '.env'))
+# env = environ.Env(
+#     DEBUG=(bool, False)
+# )
+# env.read_env(os.path.join(BASE_DIR, '.env'))
 
-DEBUG = os.environ.get("DEBUG")
-SECRET_KEY = os.environ.get("SECRET_KEY")
+# DEBUG = os.environ.get("DEBUG")
+# SECRET_KEY = os.environ.get("SECRET_KEY")
 
-ALLOWED_HOSTS = []
+env = environ.Env(DEBUG=(bool, False),)
+environ.Env.read_env('.env')
+ 
+SECRET_KEY = env('SECRET_KEY')
+DEBUG = env('DEBUG')
+
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 # Application definition
 
