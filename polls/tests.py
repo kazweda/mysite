@@ -1,3 +1,6 @@
 from django.test import TestCase
 
-# Create your tests here.
+class QuestionModelTests(TestCase):
+    def test_first(self):
+        self.assertTrue(True)
+    
