@@ -23,3 +23,15 @@ from .models import Question
 
 admin.site.register(Question)
 ```
+
+## 簡単なフォーム
+polls/templates/polls/detail.html
+
+question.idでvoteのURLへPOST
+
+選択肢(choice)のset.all()でループを回して
+inputタグを生成する。
+
+vote(request, question_id)の処理は views.py へ記述する。
+
+投票結果を results.html で表示する。
