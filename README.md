@@ -16,3 +16,10 @@ def __str__(self):
 def was_published_recently(self):
     return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 ```
+
+## アプリをadminに登録
+```
+from .models import Question
+
+admin.site.register(Question)
+```
