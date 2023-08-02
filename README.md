@@ -35,3 +35,6 @@ inputタグを生成する。
 vote(request, question_id)の処理は views.py へ記述する。
 
 投票結果を results.html で表示する。
+
+## 汎用ビューを使う
+[generic views](https://docs.djangoproject.com/ja/4.2/intro/tutorial04/#use-generic-views-less-code-is-better)
