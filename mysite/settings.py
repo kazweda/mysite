@@ -2,27 +2,16 @@ from pathlib import Path
 import os
 import environ
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+env = environ.Env(
+    DEBUG=(bool, False)
+)
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-# env = environ.Env(
-#     DEBUG=(bool, False)
-# )
-# env.read_env(os.path.join(BASE_DIR, '.env'))
-
-# DEBUG = os.environ.get("DEBUG")
-# SECRET_KEY = os.environ.get("SECRET_KEY")
-
-env = environ.Env(DEBUG=(bool, False),)
-environ.Env.read_env('.env')
- 
-SECRET_KEY = env('SECRET_KEY')
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 DEBUG = env('DEBUG')
+SECRET_KEY = env('SECRET_KEY')
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
-
-# Application definition
 
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
