@@ -38,3 +38,6 @@ vote(request, question_id)の処理は views.py へ記述する。
 
 ## 汎用ビューを使う
 [generic views](https://docs.djangoproject.com/ja/4.2/intro/tutorial04/#use-generic-views-less-code-is-better)
+
+## 2024.02.13
+メンテナンス更新
